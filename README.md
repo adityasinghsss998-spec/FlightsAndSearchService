@@ -17,7 +17,15 @@
   },
 }
 
-
+b
 ```
 - once you have added your db config as listed before , execute `npx sequelize db:create`
+and then eexecute
+`npx sequelize db:migrate`
+```
 
+## DB design
+- airplane table
+- flight
+- Airport
+- City
