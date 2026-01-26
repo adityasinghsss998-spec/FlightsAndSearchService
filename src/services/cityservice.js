@@ -3,37 +3,37 @@ class CityService{
   constructor () {
     this.cityrepository = new Cityrepository();
   }
-  async createcity(){
+  async createCity(data){
     try{
-     const city=await this.cityrepository.createcity(data);
+     const city=await this.cityrepository.createCity(data);
      return city;
     } catch(e){
       console.log("something went wrong at the service layer")
       throw(e)
     }
   }
-   async deletecity(Cityid){
+   async deleteCity(Cityid){
     
     try{
-    const response = this.cityrepository.deletecity(Cityid);
+    const response = await this.cityrepository.deleteCity(Cityid);
     return response;
     } catch(e){
       console.log("something went wrong at the service layer")
       throw(e)
     }
   }
-  async updatecity(cityid,data){
+  async updateCity(cityid,data){
     try{
-       const city=this.cityrepository.updatecity(cityid,data);
+       const city=await this.cityrepository.updateCity(cityid,data);
        return city
     } catch(e){
       console.log("something went wrong at the service layer")
       throw(e)
     }
   }
-  async getcity(cityid){
+  async getCity(cityid){
     try{
-        const city=this.cityrepository.getcity(cityid);
+        const city=await this.cityrepository.getCity(cityid);
        return city
     } catch(e){
       console.log("something went wrong at the service layer")

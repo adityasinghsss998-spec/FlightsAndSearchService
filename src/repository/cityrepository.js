@@ -24,7 +24,7 @@ class CityRepository{
   } 
   }
 
-  async updatecity({Cityid,data}){
+  async updateCity({Cityid,data}){
       try{
        const city=await City.update(data,{
         where:{
@@ -37,9 +37,9 @@ class CityRepository{
         throw(e)
       }
   }
-  async getcity(Cityid){
+  async getCity(Cityid){
     try{
-     const city=await Project.findByPk(Cityid);
+     const city=await City.findByPk(Cityid);
      return city
     } catch(e){
       console.log("something went wrong in the repository layer")
