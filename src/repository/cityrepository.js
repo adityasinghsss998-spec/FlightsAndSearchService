@@ -11,7 +11,7 @@ class CityRepository{
     }
   }
 
-  async deleteCity({Cityid}){
+  async deleteCity(Cityid){
     try{
       await City.destroy({
         where : {
@@ -24,13 +24,18 @@ class CityRepository{
   } 
   }
 
-  async updateCity({Cityid,data}){
+  async updateCity(Cityid,data){
       try{
-       const city=await City.update(data,{
-        where:{
-        id:Cityid
-        }
-       })
+        //the below approach also works but will not return updated object
+      //  const city=await City.update(data,{
+      //   where:{
+      //   id:Cityid
+      //   }
+      //  }) 
+      // for gettiong updated data in mysql we use the below approach
+      const city=await City.findByPk(Cityid);
+      city.name=data.name;
+      await city.save();
        return city;
       } catch(e){
          console.log("something went wrong in the repository layer")

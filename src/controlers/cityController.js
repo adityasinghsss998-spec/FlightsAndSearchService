@@ -69,7 +69,7 @@ const update = async (req,res)=>{
      return res.status(201).json({
       data:city,
       success:true,
-      message:"Sucessfully created a city",
+      message:"Sucessfully updated a city",
       err:{}
      })
    }catch(e){
@@ -77,7 +77,7 @@ const update = async (req,res)=>{
     return res.status(500).json({
       data:{},
       success:false,
-      message:"not able to create a city",
+      message:"not able to update a city",
       error:e
     })
    }
