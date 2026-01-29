@@ -1,7 +1,7 @@
-const {Cityrepository}=require('./repository/index');
+const CityRepository=require('../repository/cityrepository');
 class CityService{
   constructor () {
-    this.cityrepository = new Cityrepository();
+    this.cityrepository = new CityRepository();
   }
   async createCity(data){
     try{

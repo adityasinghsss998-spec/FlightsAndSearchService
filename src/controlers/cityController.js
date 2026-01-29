@@ -1,5 +1,5 @@
 
-const { CityService } = require('../services/cityservice');
+const { CityService } = require('../services/index');
 
 const cityservice= new CityService()
 //POST->req.body
