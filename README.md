@@ -29,3 +29,11 @@ and then eexecute
 - flight
 - Airport
 - City
+
+- A flight belongs to an aeroplane but one airplane cna be used in multiple flights
+- One Airport can have many flighs, but a floght belongs to one airport
+## Tables
+### City -> id,name,createdAt,updated At
+### Airport -> id,anme,addresss,reated_at,updated_at
+   Relationship-> City has many airports and AIrport belongs to a city(one to many)
+```npx sequelize-cli model:generate --name Airport --attributes name:String,address:String,cityId:integer  ```
