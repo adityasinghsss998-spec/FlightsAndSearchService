@@ -1,4 +1,5 @@
 
+const { response } = require('express');
 const { CityService } = require('../services/index');
 
 const cityservice= new CityService()
@@ -101,10 +102,24 @@ const  getAll=async (req,res)=>{
     })
    }
 }
+const AddCities= async(req,res)=>{
+   try{
+     const response=await cityservice.AddMultipleCities(req.body)
+   }catch(e){
+       console.log(e);
+       return res.status(500).json({
+        data:{},
+        success:false,
+        message:"not able to crewte the cities",
+        error:e
+       })
+   }
+}
 module.exports= {
   create,
   destroy,
   get,
   update,
-  getAll
+  getAll,
+  AddCities,
 }
