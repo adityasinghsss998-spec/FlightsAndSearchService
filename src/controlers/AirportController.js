@@ -1,9 +1,9 @@
-const {AirportService} = require('../services/AirportSerice');
-const airportservice=new AirportService();
+const {AirportService2}=require('../services/index');
+const airportservice=new AirportService2();
 //post
 const createairport=async(req,res)=>{
    try{
-     const response=await airportservice.CreateAirport(req.body);
+     const response=await airportservice.create(req.body);
      return res.status(201).json({
             message: 'Successfully created airport',
             err: {},
