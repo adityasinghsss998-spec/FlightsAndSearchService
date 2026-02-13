@@ -1,5 +1,6 @@
 const express = require("express");
 const AirportController=require('../../controlers/AirportController')
+
 const router=express.Router();
 router.post('/airport',AirportController.createairport);
 router.get('/airport/getall',AirportController.getall)
